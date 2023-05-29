@@ -1,21 +1,23 @@
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
 import "express-async-errors";
 import "reflect-metadata";
 
-const app = express();
+import userRoutes from "./routes/users/users.route";
+import { handleErrors } from "./errors";
+
+const app: Application = express();
+app.use(express.json());
 app.use(cors());
 
-app.use(express.json());
+app.use("/user", userRoutes);
+// app.use("/contact");
 
-app.use("/user");
-app.use("/contact");
+app.use(handleErrors);
 
 process.on("unhandledRejection", (err) => {
   console.error("Unhandled rejection:", err);
   process.exit(1);
 });
-
-// app.use(`error`)
 
 export default app;

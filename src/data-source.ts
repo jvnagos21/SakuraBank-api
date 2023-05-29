@@ -1,15 +1,20 @@
-import { DataSource, DataSourceOptions } from "typeorm";
+import "dotenv/config";
+import "reflect-metadata";
 import path from "path";
+import { DataSource, DataSourceOptions } from "typeorm";
 
-const dataSourceConfig = (): DataSourceOptions => {
+const DataSourceConfig = (): DataSourceOptions => {
   const entitiesPath: string = path.join(__dirname, "./entities/**.{ts,js}");
-  const migrationPath: string = path.join(__dirname, "./migrations/**.{ts,js}");
-
+  const migrationsPath: string = path.join(
+    __dirname,
+    "./migrations/**.{ts,js}"
+  );
   const dbUrl: string | undefined = process.env.DATABASE_URL;
-
-  if (!dbUrl) throw new Error("Missing env var: 'DATABASE_URL'");
-
   const nodeEnv: string | undefined = process.env.NODE_ENV;
+
+  if (!dbUrl) {
+    throw new Error("Env var DATABASE_URL does not exists");
+  }
 
   if (nodeEnv === "test") {
     return {
@@ -25,9 +30,11 @@ const dataSourceConfig = (): DataSourceOptions => {
     url: dbUrl,
     synchronize: false,
     logging: true,
+    migrations: [migrationsPath],
     entities: [entitiesPath],
-    migrations: [migrationPath],
   };
 };
 
-export const AppDataSource = new DataSource(dataSourceConfig());
+const AppDataSource = new DataSource(DataSourceConfig());
+
+export { AppDataSource };

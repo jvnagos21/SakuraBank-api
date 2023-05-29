@@ -1,5 +1,5 @@
 {
-  "name": "clientsList_api",
+  "name": "clientslist_api",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/jvnagos21/clientsList-api.git",
@@ -20,12 +20,14 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/pg": "^8.10.1",
+    "@types/validator": "^13.7.17",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "pg": "^8.11.0",
     "typeorm": "^0.3.16",
+    "validator": "^13.9.0",
     "zod": "^3.21.4"
   }
 }
