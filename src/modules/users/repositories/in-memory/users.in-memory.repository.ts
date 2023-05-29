@@ -9,7 +9,7 @@ export class UsersInMemoryRepository implements UsersRepository {
     const userFound = await this.database.find(
       (user) => user.email == userEmail,
     );
-    return userFound;
+    return plainToInstance(User,userFound);
   }
   private database: User[] = [];
   create(data: CreateUserDto): User | Promise<User> {
