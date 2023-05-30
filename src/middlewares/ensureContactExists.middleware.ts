@@ -2,24 +2,25 @@ import { Request, Response, NextFunction } from "express";
 import { Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { AppError } from "../errors";
-import { User } from "../entities";
+import { Contact } from "../entities";
 
-const ensureUserExists = async (
+const ensureContactExists = async (
   req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  const userRepository: Repository<User> = AppDataSource.getRepository(User);
+  const contactRepository: Repository<Contact> =
+    AppDataSource.getRepository(Contact);
 
-  const user = await userRepository.findOneBy({
+  const contact = await contactRepository.findOneBy({
     id: req.params.id,
   });
 
-  if (!user) {
+  if (!contact) {
     throw new AppError("User does not exist", 404);
   }
 
   return next();
 };
 
-export default ensureUserExists;
+export default ensureContactExists;
