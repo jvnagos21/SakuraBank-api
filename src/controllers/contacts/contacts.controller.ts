@@ -6,9 +6,9 @@ import {
 import createContactService from "../../services/contacts/create_contact.service";
 import retriveContactService from "../../services/contacts/retriver_contact.service";
 import listAllContactsService from "../../services/contacts/list_contact.service";
-import deleteUserService from "../../services/users/delete_user.service";
 import updateUserService from "../../services/users/update_user.service";
 import updateContactService from "../../services/contacts/update_contact.service";
+import deleteContactService from "../../services/contacts/delete_contact.service";
 
 const createContactController = async (req: Request, res: Response) => {
   const contactData: IContact = req.body;
@@ -46,7 +46,7 @@ const updateContactController = async (req: Request, res: Response) => {
 
 const deleteContactController = async (req: Request, res: Response) => {
   const contactId: string = req.params.id;
-  await deleteUserService(contactId);
+  await deleteContactService(contactId);
   return res.status(204).send();
 };
 
