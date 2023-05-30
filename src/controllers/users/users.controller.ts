@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { IUser, IUserUpdate } from "../../interfaces/users/users.interface";
-import createUserService from "../../services/users/create_user.services";
-import deleteUserService from "../../services/users/delete_user.service";
-import retriverUserService from "../../services/users/retriver_user.service";
-import listUsersService from "../../services/users/list_users.service";
-import updateUserService from "../../services/users/update_user.service";
+import createUserService from "../../services/users/createUser.services";
+import deleteUserService from "../../services/users/deleteUser.service";
+import retriverUserService from "../../services/users/retriverUser.service";
+import listUsersService from "../../services/users/listUsers.service";
+import updateUserService from "../../services/users/updateUser.service";
 
 const createUserController = async (req: Request, res: Response) => {
   const userData: IUser = req.body;

@@ -1,14 +1,10 @@
 import { Request, Response } from "express";
-import {
-  IContact,
-  IContactUpdate,
-} from "../../interfaces/contacts/contacts.interface";
-import createContactService from "../../services/contacts/create_contact.service";
-import retriveContactService from "../../services/contacts/retriver_contact.service";
-import listAllContactsService from "../../services/contacts/list_contact.service";
-import updateUserService from "../../services/users/update_user.service";
-import updateContactService from "../../services/contacts/update_contact.service";
-import deleteContactService from "../../services/contacts/delete_contact.service";
+import { IContact } from "../../interfaces/contacts/contacts.interface";
+import createContactService from "../../services/contacts/createContact.service";
+import retriveContactService from "../../services/contacts/retrivercontact.service";
+import listAllContactsService from "../../services/contacts/listContact.service";
+import updateContactService from "../../services/contacts/updateContact.service";
+import deleteContactService from "../../services/contacts/deleteContact.service";
 
 const createContactController = async (req: Request, res: Response) => {
   const contactData: IContact = req.body;

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ensureDataIsValidMiddleware from "../../middlewares/ensureDataIsValid.middleware";
+import ensureDataIsValid from "../../middlewares/ensureDataIsValid.middleware";
 import ensureUUIDIsValid from "../../middlewares/ensureUUIDIsValid.middleware";
 import ensureContactExists from "../../middlewares/ensureContactExists.middleware";
 import {
@@ -18,7 +18,7 @@ const contactRoutes = Router();
 
 contactRoutes.post(
   "",
-  ensureDataIsValidMiddleware(contactSchema),
+  ensureDataIsValid(contactSchema),
   createContactController
 );
 
@@ -34,7 +34,7 @@ contactRoutes.get(
 contactRoutes.patch(
   "/:id",
   ensureUUIDIsValid,
-  ensureDataIsValidMiddleware(contactUpdateScherma),
+  ensureDataIsValid(contactUpdateScherma),
   updateContactController
 );
 

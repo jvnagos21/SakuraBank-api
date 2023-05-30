@@ -6,7 +6,7 @@ import {
   retriverUserController,
   updateUserController,
 } from "../../controllers/users/users.controller";
-import ensureDataIsValidMiddleware from "../../middlewares/ensureDataIsValid.middleware";
+import ensureDataIsValid from "../../middlewares/ensureDataIsValid.middleware";
 import {
   userSchema,
   userUpdateScherma,
@@ -16,11 +16,7 @@ import ensureUserExists from "../../middlewares/ensureUserExists.middleware";
 
 const userRoutes = Router();
 
-userRoutes.post(
-  "",
-  ensureDataIsValidMiddleware(userSchema),
-  createUserController
-);
+userRoutes.post("", ensureDataIsValid(userSchema), createUserController);
 
 userRoutes.get("", listUsersController);
 
@@ -34,7 +30,7 @@ userRoutes.get(
 userRoutes.patch(
   "/:id",
   ensureUUIDIsValid,
-  ensureDataIsValidMiddleware(userUpdateScherma),
+  ensureDataIsValid(userUpdateScherma),
   ensureUserExists,
   updateUserController
 );
