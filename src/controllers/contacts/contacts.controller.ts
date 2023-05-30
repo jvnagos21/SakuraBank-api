@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { IContact } from "../../interfaces/contacts/contacts.interface";
 import createContactService from "../../services/contacts/createContact.service";
-import retriveContactService from "../../services/contacts/retrivercontact.service";
+import retriveContactService from "../../services/contacts/retriverContact.service";
 import listAllContactsService from "../../services/contacts/listContact.service";
 import updateContactService from "../../services/contacts/updateContact.service";
 import deleteContactService from "../../services/contacts/deleteContact.service";
