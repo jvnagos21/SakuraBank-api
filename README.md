@@ -41,8 +41,9 @@ Execute as migrations com o comando:
 ```
 yarn typeorm migration:run -d src/data-source.ts
 ```
+## ➡️ Rotas e retornos da API ➡️
 
-## 👥 **Users** 👥
+## Usuarios 
 
 O objeto User é definido como:
 
@@ -65,7 +66,7 @@ O objeto User é definido como:
 
 ---
 
-###  **Criação de usuário**
+###  Criação de usuário 
 
 ### `/user`
 
@@ -82,8 +83,8 @@ Content-type: application/json
 
 ```json
 {
-  "name": "matheus",
-  "email": "matheus@mail.com",
+  "name": "John Smith",
+  "email": "jsmith@mail.com",
   "phone": "1122275213"
 }
 ```
@@ -112,7 +113,7 @@ Content-type: application/json
 
 ---
 
-### 1.2. **Listando Usuários**
+### Listando Usuários 
 
 ### `/user`
 
@@ -120,7 +121,7 @@ Content-type: application/json
 
 ```
 GET /user
-Host: sakura-bank-api.onrender.com
+Host: https://sakura-bank-api.onrender.com
 Authorization: None
 Content-type: application/json
 ```
@@ -164,7 +165,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 GET /user/d8805ae4-9c46-4921-a4e4-ba55de4312be
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
@@ -202,7 +203,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 
 ---
 
-### 1.4. **Atualizar Usuário por ID**
+### Atualizar Usuário por ID 
 
 ### `/user/:user_id`:
 
@@ -210,7 +211,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 PATCH /user/d8805ae4-9c46-4921-a4e4-ba55de4312be
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
@@ -244,7 +245,7 @@ Content-type: application/jso
 }
 ```
 
-### 1.5. **Deletar Usuário po ID**
+### Deletar Usuário por ID 
 
 ### `/user/:user_id`:
 
@@ -252,7 +253,7 @@ Content-type: application/jso
 DELETE /user/d8805ae4-9c46-4921-a4e4-ba55de4312be
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
@@ -277,7 +278,7 @@ Vazio
 Vazio
 ```
 
-## 2. **Contacts**
+## Contatos
 
 O objeto Contact é definido como:
 
@@ -301,7 +302,7 @@ O objeto Contact é definido como:
 
 ---
 
-### 2.1. **Criação de contato**
+### Criação de contato
 
 ### `/contact`
 
@@ -349,7 +350,7 @@ Content-type: application/json
 
 ---
 
-### 2.2. **Listando Contatos**
+### Listando Contatos
 
 ### `/contact`
 
@@ -359,7 +360,7 @@ Content-type: application/json
 GET /contact
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Corpo da Requisição:
@@ -392,7 +393,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 
 ---
 
-### 2.3. **Listar Contato po ID**
+### Listar Contato por ID
 
 ### `/contact/:contact_id`:
 
@@ -400,7 +401,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 GET /contact/c569d2ae-3603-4848-9a4d-8feb00238348
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
@@ -437,7 +438,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 
 ---
 
-### 2.4. **Atualizar Contato po ID**
+### 2.4. Atualizar Contato por ID
 
 ### `/contact/:contact_id`:
 
@@ -445,7 +446,7 @@ Nenhum, o máximo que pode acontecer é retornar uma lista vazia.
 PATCH /contact/c569d2ae-3603-4848-9a4d-8feb00238348
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
@@ -478,9 +479,7 @@ Content-type: application/jso
 }
 ```
 
-### 2.5. ❌❌ **Deletar Contato po ID** ❌❌
-
-[ Voltar para os Endpoints ](#4-endpoints)
+### ❌❌ Deletar Contato po ID ❌❌
 
 ### `/contact/:contact_id`:
 
@@ -488,7 +487,7 @@ Content-type: application/jso
 DELETE /contact/c569d2ae-3603-4848-9a4d-8feb00238348
 Host: https://sakura-bank-api.onrender.com
 Authorization: None
-Content-type: application/jso
+Content-type: application/json
 ```
 
 ### Parâmetros da Requisição:
